@@ -39,9 +39,13 @@ const ACCENT = "#E7C56D";
 const CTA_DARK = "#16090A";
 
 const OUTER_GRADIENT =
-  "bg-[linear-gradient(135deg,rgba(18,4,7,0.98)_0%,rgba(58,6,16,0.96)_24%,rgba(110,8,25,0.94)_52%,rgba(186,24,45,0.90)_78%,rgba(231,197,109,0.76)_100%)]";
+  "bg-[linear-gradient(135deg,rgba(64,14,23,0.97)_0%,rgba(110,27,42,0.95)_36%,rgba(168,44,63,0.93)_72%,rgba(229,191,109,0.88)_100%)]";
 const INNER_GRADIENT =
-  "bg-[linear-gradient(135deg,rgba(7,2,4,0.98)_0%,rgba(22,4,8,0.96)_38%,rgba(52,7,15,0.90)_100%)]";
+  "bg-[linear-gradient(135deg,rgba(40,8,14,0.98)_0%,rgba(73,13,24,0.96)_40%,rgba(112,24,37,0.94)_72%,rgba(167,54,67,0.90)_100%)]";
+const CARD_SURFACE =
+  "bg-[linear-gradient(135deg,rgba(69,10,20,0.96)_0%,rgba(92,13,26,0.95)_34%,rgba(117,22,37,0.93)_68%,rgba(63,23,29,0.94)_100%)]";
+const CARD_TOP_STRIP =
+  "bg-[linear-gradient(135deg,rgba(255,255,255,0.08)_0%,rgba(255,255,255,0.04)_18%,rgba(188,54,73,0.22)_100%)]";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -61,9 +65,9 @@ const pulseGlow = {
 const containerClass =
   "relative z-10 mx-auto w-full max-w-[1680px] px-4 sm:px-6 lg:px-10 xl:px-14";
 const glass =
-  "border border-rose-300/20 bg-[linear-gradient(135deg,rgba(255,255,255,0.10),rgba(255,255,255,0.04))] md:backdrop-blur-xl backdrop-blur-sm shadow-[0_12px_32px_rgba(84,7,20,0.30)]";
-const softCard = `rounded-[2rem] ${glass}`;
-const gradientOuterCard = `rounded-[2rem] border border-white/10 ${OUTER_GRADIENT} md:backdrop-blur-xl backdrop-blur-sm shadow-[0_8px_22px_rgba(0,0,0,0.14)]`;
+  `border border-rose-200/20 ${OUTER_GRADIENT} md:backdrop-blur-xl backdrop-blur-sm shadow-[0_14px_34px_rgba(84,7,20,0.34)]`;
+const softCard = `rounded-[2rem] border border-white/10 ${OUTER_GRADIENT} md:backdrop-blur-xl backdrop-blur-sm shadow-[0_14px_34px_rgba(84,7,20,0.34)]`;
+const gradientOuterCard = `rounded-[2rem] border border-white/10 ${OUTER_GRADIENT} md:backdrop-blur-xl backdrop-blur-sm shadow-[0_14px_34px_rgba(84,7,20,0.34)]`;
 
 const navItems = [
   { label: "Rreth nesh", href: "#about" },
@@ -219,7 +223,7 @@ function sectionBadge(icon, text, textColor = "text-white") {
   const Icon = icon;
   return (
     <div
-      className={`inline-flex max-w-full items-center gap-3 rounded-full border border-white/10 bg-white/10 px-4 py-2.5 text-xs font-semibold ${textColor} backdrop-blur-md shadow-[0_6px_18px_rgba(0,0,0,0.14)] sm:px-5 sm:py-3 sm:text-sm`}
+      className={`inline-flex max-w-full items-center gap-3 rounded-full border border-white/10  ${textColor} backdrop-blur-md shadow-[0_6px_18px_rgba(0,0,0,0.14)] sm:px-5 sm:py-3 sm:text-sm`}
     >
       <Icon className="h-4 w-4 sm:h-5 sm:w-5" style={{ color: ACCENT }} />
       <span className="truncate">{text}</span>
@@ -230,7 +234,7 @@ function sectionBadge(icon, text, textColor = "text-white") {
 function LargeSectionBadge({ icon: Icon, text }) {
   return (
     <div
-      className="inline-flex max-w-full items-center gap-3 rounded-full border border-white/10 bg-white/10 px-5 py-3 text-base font-bold backdrop-blur-md shadow-[0_6px_18px_rgba(0,0,0,0.14)] sm:px-8 sm:py-4 sm:text-xl lg:text-2xl"
+      className={`inline-flex max-w-full items-center gap-3 rounded-full border border-white/10 ${OUTER_GRADIENT} px-5 py-3 text-base font-bold backdrop-blur-md shadow-[0_6px_18px_rgba(0,0,0,0.14)] sm:px-8 sm:py-4 sm:text-xl lg:text-2xl`}
       style={{ color: ACCENT }}
     >
       <Icon className="h-5 w-5 shrink-0 sm:h-7 sm:w-7" style={{ color: ACCENT }} />
@@ -553,7 +557,7 @@ function HeroAudioPlayer({ isMobile }) {
   };
 
   return (
-    <div className="mt-5 rounded-[1.35rem] border border-white/10 bg-[#14070A]/60 p-3 sm:p-4">
+    <div className={`mt-5 rounded-[1.35rem] border border-white/10 ${CARD_SURFACE} p-3 sm:p-4`}>
       <audio
         ref={audioRef}
         preload="metadata"
@@ -679,8 +683,8 @@ function StructuredCard({ icon: Icon, title, desc, isMobile }) {
       whileHover={isMobile ? {} : { y: -6, scale: 1.01 }}
       className={`${gradientOuterCard} h-full p-[1px]`}
     >
-      <div className="h-full rounded-[calc(2rem-1px)] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] p-4 sm:p-5">
-        <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-gradient-to-r from-white/5 to-white/10 px-4 py-3">
+      <div className={`h-full rounded-[calc(2rem-1px)] border border-white/10 ${CARD_SURFACE} p-4 sm:p-5`}>
+        <div className={`flex items-center gap-3 rounded-2xl border border-white/10 ${CARD_TOP_STRIP} px-4 py-3`}>
           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-rose-500/15">
             <Icon className="h-5 w-5" style={{ color: ACCENT }} />
           </div>
@@ -688,7 +692,7 @@ function StructuredCard({ icon: Icon, title, desc, isMobile }) {
             {title}
           </h3>
         </div>
-        <div className="mt-4 rounded-2xl border border-white/10 bg-[#14070A]/60 px-4 py-4 text-sm leading-7 text-white/78 sm:text-base sm:leading-8">
+        <div className={`mt-4 rounded-2xl border border-white/10 ${CARD_SURFACE} px-4 py-4 text-sm leading-7 text-white/78 sm:text-base sm:leading-8`}>
           {desc}
         </div>
       </div>
@@ -702,13 +706,13 @@ function IdentityCard({ icon: Icon, title, text, large = false, isMobile }) {
       whileHover={isMobile ? {} : { y: -6, scale: 1.01 }}
       className={`${softCard} h-full p-[1px]`}
     >
-      <div className="h-full rounded-[calc(2rem-1px)] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] p-4 sm:p-5">
-        <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-gradient-to-r from-white/5 to-white/10 px-4 py-3">
+      <div className={`h-full rounded-[calc(2rem-1px)] border border-white/10 ${CARD_SURFACE} p-4 sm:p-5`}>
+        <div className={`flex items-center gap-3 rounded-2xl border border-white/10 ${CARD_TOP_STRIP} px-4 py-3`}>
           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-rose-500/15">
             <Icon className="h-5 w-5" style={{ color: ACCENT }} />
           </div>
           <div
-            className={`rounded-2xl border border-white/10 bg-white/5 px-4 py-2 font-bold text-white ${
+            className={`rounded-2xl border border-white/10 ${OUTER_GRADIENT} px-4 py-2 font-bold text-white ${
               large ? "text-lg sm:text-xl" : "text-base sm:text-lg"
             }`}
           >
@@ -716,7 +720,7 @@ function IdentityCard({ icon: Icon, title, text, large = false, isMobile }) {
           </div>
         </div>
         <div
-          className={`mt-4 rounded-2xl border border-white/10 bg-[#14070A]/60 px-4 py-4 text-white/80 ${
+          className={`mt-4 rounded-2xl border border-white/10 ${CARD_SURFACE} px-4 py-4 text-white/80 ${
             large
               ? "text-base leading-8 sm:text-lg sm:leading-9 lg:text-xl lg:leading-10"
               : "text-base leading-8 sm:text-lg"
@@ -735,8 +739,8 @@ function ImpactCard({ icon: Icon, title, desc, isMobile }) {
       whileHover={isMobile ? {} : { y: -6, scale: 1.01 }}
       className={`${softCard} h-full p-[1px]`}
     >
-      <div className="h-full rounded-[calc(2rem-1px)] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] p-4 sm:p-5">
-        <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-gradient-to-r from-white/5 to-white/10 px-4 py-3">
+      <div className={`h-full rounded-[calc(2rem-1px)] border border-white/10 ${CARD_SURFACE} p-4 sm:p-5`}>
+        <div className={`flex items-center gap-3 rounded-2xl border border-white/10 ${CARD_TOP_STRIP} px-4 py-3`}>
           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-yellow-100/10">
             <Icon className="h-5 w-5" style={{ color: ACCENT }} />
           </div>
@@ -744,7 +748,7 @@ function ImpactCard({ icon: Icon, title, desc, isMobile }) {
             {title}
           </h3>
         </div>
-        <div className="mt-4 rounded-2xl border border-white/10 bg-[#14070A]/60 px-4 py-4 text-sm leading-7 text-white/78 sm:text-base sm:leading-8">
+        <div className={`mt-4 rounded-2xl border border-white/10 ${CARD_SURFACE} px-4 py-4 text-sm leading-7 text-white/78 sm:text-base sm:leading-8`}>
           {desc}
         </div>
       </div>
@@ -904,7 +908,7 @@ function ProtectedHlsVideoCard({
         </div>
       </div>
 
-      <div className="mt-4 rounded-[1.3rem] border border-white/10 bg-[#14070A]/60 p-3 sm:p-4">
+      <div className={`mt-4 rounded-[1.3rem] border border-white/10 ${CARD_SURFACE} p-3 sm:p-4`}>
         <div className="flex flex-wrap items-center gap-2">
           <button
             type="button"
@@ -1098,7 +1102,7 @@ export default function QuranTranslationLandingPage() {
                 initial="hidden"
                 animate="show"
                 variants={fadeUp}
-                className="mb-5 inline-flex items-center gap-2 rounded-full border border-amber-300/20 bg-white/10 px-4 py-2 text-xs backdrop-blur-md sm:text-sm"
+                className={`mb-5 inline-flex items-center gap-2 rounded-full border border-amber-300/20 ${OUTER_GRADIENT} px-4 py-2 text-xs backdrop-blur-md sm:text-sm`}
                 style={{ color: ACCENT }}
               >
                 <Stars className="h-4 w-4" style={{ color: ACCENT }} />
@@ -1181,7 +1185,7 @@ export default function QuranTranslationLandingPage() {
                             ease: "easeInOut",
                           }
                     }
-                    className="rounded-3xl border border-white/10 bg-white/10 p-3 text-center backdrop-blur-md shadow-[0_10px_24px_rgba(84,7,20,0.24)] sm:p-4"
+                    className={`rounded-3xl border border-white/10 ${OUTER_GRADIENT} p-3 text-center backdrop-blur-md shadow-[0_10px_24px_rgba(84,7,20,0.24)] sm:p-4`}
                   >
                     <div className="text-xl font-black sm:text-2xl" style={{ color: ACCENT }}>
                       {item.value}
@@ -1216,7 +1220,7 @@ export default function QuranTranslationLandingPage() {
                     </div>
                   </div>
 
-                  <div className="mt-6 rounded-[1.4rem] border border-white/10 bg-[#1A0B0B]/74 p-4 sm:mt-8 sm:p-6">
+                  <div className={`mt-6 rounded-[1.4rem] border border-white/10 ${CARD_SURFACE} p-4 sm:mt-8 sm:p-6`}>
                     <div className="mb-4 flex items-start gap-3 text-sm text-white/80 sm:items-center sm:text-base">
                       <Headphones className="mt-0.5 h-5 w-5 shrink-0 text-amber-200 sm:mt-0" />
                       <span>Dëgjoni recitimin me paraqitje vizuale të kuptimeve të Kuranit Fisnik</span>
@@ -1243,7 +1247,7 @@ export default function QuranTranslationLandingPage() {
                       {heroCards.map((item) => (
                         <div
                           key={item.label}
-                          className="rounded-2xl border border-white/10 bg-white/5 p-3 sm:p-4"
+                          className={`rounded-2xl border border-white/10 ${OUTER_GRADIENT} p-3 sm:p-4`}
                         >
                           <div className="text-sm font-bold sm:text-lg" style={{ color: ACCENT }}>
                             {item.value}
@@ -1266,7 +1270,7 @@ export default function QuranTranslationLandingPage() {
                   return (
                     <div
                       key={item.title}
-                      className="w-full rounded-[1.4rem] border border-white/10 bg-white/10 px-5 py-4 text-center backdrop-blur-md shadow-[0_10px_24px_rgba(84,7,20,0.24)] sm:min-w-[220px] sm:w-auto sm:rounded-[1.6rem]"
+                      className={`w-full rounded-[1.4rem] border border-white/10 ${OUTER_GRADIENT} px-5 py-4 text-center backdrop-blur-md shadow-[0_10px_24px_rgba(84,7,20,0.24)] sm:min-w-[220px] sm:w-auto sm:rounded-[1.6rem]`}
                     >
                       <div className="flex items-center justify-center gap-3">
                         <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/5 sm:h-11 sm:w-11">
@@ -1338,8 +1342,8 @@ export default function QuranTranslationLandingPage() {
 
               <div className="relative z-10">
                 <div className="grid gap-6 lg:grid-cols-2 lg:items-stretch lg:gap-8">
-                  <div className="rounded-[1.8rem] border border-white/10 bg-[#14070A]/52 p-4 sm:p-6">
-                    <div className="h-full rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-5">
+                  <div className={`rounded-[1.8rem] border border-white/10 ${CARD_SURFACE} p-4 sm:p-6`}>
+                    <div className={`h-full rounded-2xl border border-white/10 ${CARD_SURFACE} p-4 sm:p-5`}>
                       <h2 className="text-2xl font-black sm:text-3xl lg:text-4xl">
                         Partneritet ekzekutiv i besueshëm
                       </h2>
@@ -1355,8 +1359,8 @@ export default function QuranTranslationLandingPage() {
                     </div>
                   </div>
 
-                  <div className="rounded-[1.8rem] border border-white/10 bg-[#14070A]/74 p-4 sm:p-6">
-                    <div className="flex h-full flex-col justify-center rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-5">
+                  <div className={`rounded-[1.8rem] border border-white/10 ${CARD_SURFACE} p-4 sm:p-6`}>
+                    <div className={`flex h-full flex-col justify-center rounded-2xl border border-white/10 ${CARD_SURFACE} p-4 sm:p-5`}>
                       <div className="text-sm text-white/60">Faqja zyrtare</div>
                       <div className="mt-2 text-xl font-bold sm:text-2xl">Jasco Media City</div>
                       <a
@@ -1544,7 +1548,7 @@ export default function QuranTranslationLandingPage() {
             >
               <div className="text-center">
                 <div
-                  className="inline-flex max-w-full items-center gap-3 rounded-full border border-white/10 bg-white/10 px-5 py-3 text-base font-semibold backdrop-blur-md shadow-[0_10px_24px_rgba(84,7,20,0.24)] sm:px-7 sm:py-4 sm:text-lg"
+                  className={`inline-flex max-w-full items-center gap-3 rounded-full border border-white/10 ${OUTER_GRADIENT} px-5 py-3 text-base font-semibold backdrop-blur-md shadow-[0_10px_24px_rgba(84,7,20,0.24)] sm:px-7 sm:py-4 sm:text-lg`}
                   style={{ color: ACCENT }}
                 >
                   <Sparkles className="h-5 w-5 shrink-0" style={{ color: ACCENT }} />
@@ -1559,11 +1563,11 @@ export default function QuranTranslationLandingPage() {
               <div
                 className={`mt-8 rounded-[2rem] p-4 sm:p-6 md:p-8 ${gradientOuterCard}`}
               >
-                <div className="rounded-[2rem] border border-white/10 bg-[#14070A]/74 p-4 sm:p-6">
-                  <div className="rounded-[1.5rem] border border-white/10 bg-white/5 p-4 sm:p-5">
+                <div className={`rounded-[2rem] border border-white/10 ${CARD_SURFACE} p-4 sm:p-6`}>
+                  <div className={`rounded-[1.5rem] border border-white/10 ${CARD_SURFACE} p-4 sm:p-5`}>
                     <div className="mb-4 text-xl font-bold sm:text-2xl">Na kontaktoni</div>
                     <div className="space-y-3 text-white/75">
-                      <div className="rounded-2xl bg-white/5 px-4 py-3 text-sm sm:text-base">
+                      <div className={`rounded-2xl border border-white/10 ${CARD_SURFACE} px-4 py-3 text-sm sm:text-base`}>
                         Ekipi ynë do të jetë i lumtur t’ju ndihmojë dhe t’ju përgjigjet sa më shpejt.
                       </div>
                       <a
@@ -1606,12 +1610,12 @@ export default function QuranTranslationLandingPage() {
                     Sana... mesazh për botët
                   </div>
 
-                  <p className="mx-auto mt-4 max-w-[30rem] rounded-[1.4rem] border border-white/10 bg-[rgba(92,12,26,0.55)] px-4 py-4 text-sm leading-7 text-white/78 sm:px-5 sm:text-base sm:leading-8">
+                  <p className={`mx-auto mt-4 max-w-[30rem] rounded-[1.4rem] border border-white/10 ${CARD_SURFACE} px-4 py-4 text-sm leading-7 text-white/78 sm:px-5 sm:text-base sm:leading-8`}>
                     Kanale audio-vizuale për përkthimin e kuptimeve të Kuranit Fisnik në të gjitha gjuhët botërore, në një projekt vakëfi që bashkon bukurinë e paraqitjes, saktësinë e domethënies dhe frymën e mesazhit.
                   </p>
                 </div>
 
-                <div className="rounded-[1.6rem] border border-white/10 bg-white/5 p-4 sm:p-5 flex flex-col items-center justify-center text-center">
+                <div className={`rounded-[1.6rem] border border-white/10 ${OUTER_GRADIENT} p-4 sm:p-5 flex flex-col items-center justify-center text-center`}>
                   <div className="mb-5 flex flex-col items-center justify-center gap-4 text-lg font-bold text-white sm:text-xl">
                     <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/5 shadow-[0_10px_24px_rgba(84,7,20,0.24)]">
                       <MessageCircle className="h-6 w-6" style={{ color: ACCENT }} />
@@ -1622,19 +1626,19 @@ export default function QuranTranslationLandingPage() {
                   <div className="w-full space-y-4 text-white/72">
                     <a
                       href="mailto:snachannel159@gmail.com"
-                      className="flex items-center justify-center gap-3 break-all rounded-2xl border border-white/10 bg-[#14070A]/64 px-4 py-3 text-sm transition hover:bg-white/10 sm:text-base"
+                      className={`flex items-center justify-center gap-3 break-all rounded-2xl border border-white/10 ${CARD_SURFACE} px-4 py-3 text-sm transition hover:bg-white/10 sm:text-base`}
                     >
                       <Mail className="h-4 w-4 shrink-0" style={{ color: ACCENT }} />
                       snachannel159@gmail.com
                     </a>
 
-                    <div className="flex items-center justify-center gap-3 rounded-2xl border border-white/10 bg-[#14070A]/64 px-4 py-3 text-sm sm:text-base">
+                    <div className={`flex items-center justify-center gap-3 rounded-2xl border border-white/10 ${CARD_SURFACE} px-4 py-3 text-sm sm:text-base`}>
                       <MapPin className="h-4 w-4 shrink-0" style={{ color: ACCENT }} />
                       Amman - Jordani
                     </div>
                   </div>
 
-                  <div className="mt-6 w-full rounded-[1.4rem] border border-white/10 bg-[#14070A]/52 p-4">
+                  <div className={`mt-6 w-full rounded-[1.4rem] border border-white/10 ${CARD_SURFACE} p-4`}>
                     <a
                       href="https://www.facebook.com/profile.php?id=61586776012201"
                       target="_blank"
@@ -1651,7 +1655,7 @@ export default function QuranTranslationLandingPage() {
                   </div>
                 </div>
 
-                <div className="rounded-[1.8rem] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.04))] p-4 backdrop-blur-md sm:p-5 flex flex-col items-center justify-center text-center">
+                <div className={`rounded-[1.8rem] border border-white/10 ${OUTER_GRADIENT} p-4 backdrop-blur-md sm:p-5 flex flex-col items-center justify-center text-center`}>
                   <div className="mb-5 flex flex-col items-center justify-center gap-4 text-lg font-bold text-white sm:text-xl">
                     <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/5 shadow-[0_10px_24px_rgba(84,7,20,0.24)]">
                       <Link2 className="h-6 w-6" style={{ color: ACCENT }} />
@@ -1659,7 +1663,7 @@ export default function QuranTranslationLandingPage() {
                     <span>Lidhjet e aplikacionit tonë</span>
                   </div>
 
-                  <div className="w-full rounded-[1.4rem] border border-white/10 bg-[#14070A]/52 p-4">
+                  <div className={`w-full rounded-[1.4rem] border border-white/10 ${CARD_SURFACE} p-4`}>
                     <p className="mb-4 text-sm leading-7 text-white/65">
                       Shkarkoni aplikacionin dhe filloni të ndiqni përmbajtjen kuranore me lehtësi përmes platformave zyrtare.
                     </p>
@@ -1669,7 +1673,7 @@ export default function QuranTranslationLandingPage() {
                         href="https://play.google.com/store/apps/details?id=com.sana_all&pcampaignid=web_share"
                         target="_blank"
                         rel="noreferrer"
-                        className="group rounded-[1.3rem] border border-white/10 bg-white/5 p-4 transition hover:-translate-y-0.5 hover:bg-white/10"
+                        className={`group rounded-[1.3rem] border border-white/10 ${OUTER_GRADIENT} p-4 transition hover:-translate-y-0.5 hover:brightness-110`}
                       >
                         <div className="flex items-center justify-center gap-3">
                           <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-rose-500/15 text-white">
@@ -1685,7 +1689,7 @@ export default function QuranTranslationLandingPage() {
                         href="https://apps.apple.com/us/app/sana-tv-%D8%B3%D9%86%D8%A7/id6742054715"
                         target="_blank"
                         rel="noreferrer"
-                        className="group rounded-[1.3rem] border border-white/10 bg-white/5 p-4 transition hover:-translate-y-0.5 hover:bg-white/10"
+                        className={`group rounded-[1.3rem] border border-white/10 ${OUTER_GRADIENT} p-4 transition hover:-translate-y-0.5 hover:brightness-110`}
                       >
                         <div className="flex items-center justify-center gap-3">
                           <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-yellow-100/10 text-white">
@@ -1698,7 +1702,7 @@ export default function QuranTranslationLandingPage() {
                       </a>
                     </div>
 
-                    <div className="mt-5 rounded-[1.4rem] border border-white/10 bg-[#1A0B0B]/68 p-4">
+                    <div className={`mt-5 rounded-[1.4rem] border border-white/10 ${CARD_SURFACE} p-4`}>
                       <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-white/65">
                         <span>⭐ 4.9 vlerësim</span>
                         <span>🌍 100+ vende</span>
