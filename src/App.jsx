@@ -1102,7 +1102,7 @@ export default function QuranTranslationLandingPage() {
                 initial="hidden"
                 animate="show"
                 variants={fadeUp}
-                className={`mb-5 inline-flex items-center gap-2 rounded-full border border-amber-300/20 ${OUTER_GRADIENT} px-4 py-2 text-xs backdrop-blur-md sm:text-sm`}
+                className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs backdrop-blur-xl shadow-[0_8px_20px_rgba(0,0,0,0.25)] sm:text-sm"
                 style={{ color: ACCENT }}
               >
                 <Stars className="h-4 w-4" style={{ color: ACCENT }} />
