@@ -237,9 +237,7 @@ function LargeSectionBadge({ icon: Icon, text }) {
       className="inline-flex max-w-full items-center gap-3 rounded-full border border-white/15 bg-white/10 px-5 py-3 text-base font-bold backdrop-blur-xl shadow-[0_10px_24px_rgba(0,0,0,0.22)] sm:px-8 sm:py-4 sm:text-xl lg:text-2xl"
       style={{ color: ACCENT }}
     >
-      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-white/15 bg-white/10 backdrop-blur-md shadow-[0_8px_18px_rgba(0,0,0,0.18)] sm:h-12 sm:w-12">
-        <Icon className="h-5 w-5 sm:h-7 sm:w-7" style={{ color: ACCENT }} />
-      </div>
+      <Icon className="h-5 w-5 shrink-0 sm:h-7 sm:w-7" style={{ color: ACCENT }} />
       <span className="truncate">{text}</span>
     </div>
   );
@@ -1275,9 +1273,7 @@ export default function QuranTranslationLandingPage() {
                       className="w-full rounded-[1.4rem] border border-white/15 bg-white/10 px-5 py-4 text-center backdrop-blur-xl shadow-[0_10px_24px_rgba(0,0,0,0.22)] sm:min-w-[220px] sm:w-auto sm:rounded-[1.6rem]"
                     >
                       <div className="flex items-center justify-center gap-3">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/15 bg-white/10 backdrop-blur-md shadow-[0_8px_18px_rgba(0,0,0,0.18)]">
-                          <Icon className="h-5 w-5" style={{ color: ACCENT, opacity: 0.9 }} />
-                        </div>
+                        <Icon className="h-5 w-5 shrink-0" style={{ color: ACCENT, opacity: 0.9 }} />
                         <div className="text-sm font-bold text-white sm:text-base">{item.title}</div>
                       </div>
                     </div>
@@ -1553,9 +1549,7 @@ export default function QuranTranslationLandingPage() {
                   className="inline-flex max-w-full items-center gap-3 rounded-full border border-white/15 bg-white/10 px-5 py-3 text-base font-semibold backdrop-blur-xl shadow-[0_10px_24px_rgba(0,0,0,0.22)] sm:px-7 sm:py-4 sm:text-lg"
                   style={{ color: ACCENT }}
                 >
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-white/15 bg-white/10 backdrop-blur-md shadow-[0_8px_18px_rgba(0,0,0,0.18)]">
-                    <Sparkles className="h-5 w-5" style={{ color: ACCENT }} />
-                  </div>
+                  <Sparkles className="h-5 w-5 shrink-0" style={{ color: ACCENT }} />
                   <span>Na kontaktoni</span>
                 </div>
 
