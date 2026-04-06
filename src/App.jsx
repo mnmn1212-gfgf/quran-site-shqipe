@@ -223,10 +223,10 @@ function sectionBadge(icon, text, textColor = "text-white") {
   const Icon = icon;
   return (
     <div
-      className={`flex w-full items-center justify-center gap-3 rounded-full border border-white/25 px-4 py-2 text-xs ${textColor} backdrop-blur-md shadow-[0_0_12px_rgba(255,255,255,0.08)] sm:inline-flex sm:w-auto sm:px-5 sm:py-3 sm:text-sm`}
+      className={`inline-flex max-w-full items-center justify-center gap-3 rounded-full border border-white/25 px-4 py-2 text-xs ${textColor} backdrop-blur-md shadow-[0_0_12px_rgba(255,255,255,0.08)] sm:px-5 sm:py-3 sm:text-sm`}
     >
       <Icon className="h-4 w-4 shrink-0 sm:h-5 sm:w-5" style={{ color: ACCENT }} />
-      <span className="text-center whitespace-normal break-words leading-5 sm:leading-normal">
+      <span className="max-w-[calc(100vw-7rem)] text-center whitespace-normal break-words leading-5 sm:max-w-none sm:leading-normal">
         {text}
       </span>
     </div>
