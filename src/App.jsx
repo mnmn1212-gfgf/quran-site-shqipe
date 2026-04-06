@@ -1548,10 +1548,12 @@ export default function QuranTranslationLandingPage() {
             >
               <div className="text-center">
                 <div
-                  className={`inline-flex max-w-full items-center gap-3 rounded-full border border-white/10 ${OUTER_GRADIENT} px-5 py-3 text-base font-semibold backdrop-blur-md shadow-[0_10px_24px_rgba(84,7,20,0.24)] sm:px-7 sm:py-4 sm:text-lg`}
+                  className="inline-flex max-w-full items-center gap-3 rounded-full border border-white/15 bg-white/10 px-5 py-3 text-base font-semibold backdrop-blur-xl shadow-[0_10px_24px_rgba(0,0,0,0.22)] sm:px-7 sm:py-4 sm:text-lg"
                   style={{ color: ACCENT }}
                 >
-                  <Sparkles className="h-5 w-5 shrink-0" style={{ color: ACCENT }} />
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-white/15 bg-white/10 backdrop-blur-md shadow-[0_8px_18px_rgba(0,0,0,0.18)]">
+                    <Sparkles className="h-5 w-5" style={{ color: ACCENT }} />
+                  </div>
                   <span>Na kontaktoni</span>
                 </div>
 
