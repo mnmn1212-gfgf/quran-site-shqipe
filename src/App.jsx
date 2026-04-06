@@ -1273,8 +1273,8 @@ export default function QuranTranslationLandingPage() {
                       className={`w-full rounded-[1.4rem] border border-white/10 ${OUTER_GRADIENT} px-5 py-4 text-center backdrop-blur-md shadow-[0_10px_24px_rgba(84,7,20,0.24)] sm:min-w-[220px] sm:w-auto sm:rounded-[1.6rem]`}
                     >
                       <div className="flex items-center justify-center gap-3">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/5 sm:h-11 sm:w-11">
-                          <Icon className="h-5 w-5" style={{ color: ACCENT }} />
+                        <div className="flex h-10 w-10 items-center justify-center  rounded-2xl border border-white/15 bg-white/10 backdrop-blur-md shadow-[0_8px_20px_rgba(0,0,0,0.25)] ">
+                          <Icon className="h-5 w-5" style={{ color: ACCENT, opacity: 0.9 }} />
                         </div>
                         <div className="text-sm font-bold text-white sm:text-base">{item.title}</div>
                       </div>
