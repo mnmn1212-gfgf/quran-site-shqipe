@@ -223,10 +223,12 @@ function sectionBadge(icon, text, textColor = "text-white") {
   const Icon = icon;
   return (
     <div
-      className={`inline-flex max-w-full items-center gap-3 rounded-full border border-white/25 ${textColor} backdrop-blur-md shadow-[0_0_12px_rgba(255,255,255,0.08)] sm:px-5 sm:py-3 sm:text-sm`}
+      className={`flex w-full items-center justify-center gap-3 rounded-full border border-white/25 px-4 py-2 text-xs ${textColor} backdrop-blur-md shadow-[0_0_12px_rgba(255,255,255,0.08)] sm:inline-flex sm:w-auto sm:px-5 sm:py-3 sm:text-sm`}
     >
-      <Icon className="h-4 w-4 sm:h-5 sm:w-5" style={{ color: ACCENT }} />
-      <span className="truncate">{text}</span>
+      <Icon className="h-4 w-4 shrink-0 sm:h-5 sm:w-5" style={{ color: ACCENT }} />
+      <span className="text-center whitespace-normal break-words leading-5 sm:leading-normal">
+        {text}
+      </span>
     </div>
   );
 }
@@ -1243,7 +1245,7 @@ export default function QuranTranslationLandingPage() {
                       </div>
                     )}
 
-                    <div className="mt-6 grid grid-cols-3 gap-2 text-center sm:mt-8 sm:gap-3">
+                    <div className="mt-6 grid grid-cols-1 gap-2 text-center sm:mt-8 sm:grid-cols-3 sm:gap-3">
                       {heroCards.map((item) => (
                         <div
                           key={item.label}
@@ -1252,7 +1254,7 @@ export default function QuranTranslationLandingPage() {
                           <div className="text-sm font-bold sm:text-lg" style={{ color: ACCENT }}>
                             {item.value}
                           </div>
-                          <div className="mt-1 text-[11px] text-white/60 sm:text-xs">
+                          <div className="mt-1 break-words text-[11px] leading-4 text-white/60 sm:text-xs sm:leading-5">
                             {item.label}
                           </div>
                         </div>
